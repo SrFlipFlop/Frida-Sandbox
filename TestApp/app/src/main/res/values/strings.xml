@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FridaSandbox</string>
+    <string name="main_description">Description ...</string>
+    <string-array name="location">
+        <item>Application</item>
+        <item>Library</item>
+        <item>Native</item>
+    </string-array>
+    <string-array name="challenge">
+        <item>Intercept information</item>
+        <item>Implement methods</item>
+        <item>Brute force</item>
+        <item>Security checks</item>
+    </string-array>
+</resources>
