@@ -40,9 +40,7 @@ public class ImplementActivity extends Activity {
                 generatedKey = key.generateKey();
                 break;
             case "Native":
-                Log.d("======", "entra");
                 generatedKey = implementJNI();
-                Log.d("======", generatedKey);
                 break;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

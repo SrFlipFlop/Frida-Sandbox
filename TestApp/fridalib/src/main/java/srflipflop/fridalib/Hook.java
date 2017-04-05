@@ -4,20 +4,22 @@ import android.util.Base64;
 
 public class Hook {
     public boolean sendInfo() {
-        String secret = generateSuperSecret();
-        String encrypted = encryptSecret(secret);
-        return sendToServer(encrypted);
+        String encrypted = getSecretFromDb();
+        String secret = decryptSecret(encrypted);
+        boolean result = sendToServer(secret);
+        return sendToServer(secret);
     }
 
-    private String generateSuperSecret() {
-        return "¡Sup3r_S3cr3d!";
+    private String getSecretFromDb() {
+        return Base64.encodeToString("¡Sup3r_S3cr3d!".getBytes(), Base64.DEFAULT);
     }
 
-    private String encryptSecret(String secret) {
-        return Base64.encodeToString(secret.getBytes(), 0);
+    private String decryptSecret(String secret) {
+        byte[] bytes = Base64.decode(secret.getBytes(), Base64.DEFAULT);
+        return new String(bytes);
     }
 
     private boolean sendToServer(String secret) {
-        return secret.length() > 14;
+        return secret.length() == 14;
     }
 }

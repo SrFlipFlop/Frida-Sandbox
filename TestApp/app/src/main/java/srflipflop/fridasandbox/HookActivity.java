@@ -52,18 +52,19 @@ public class HookActivity extends Activity {
     }
 
     private boolean sendInfo() {
-        String secret = generateSuperSecret();
-        String encrypted = encryptSecret(secret);
-        sendToServer(encrypted);
+        String encrypted = getSecretFromDb();
+        String secret= decryptSecret(encrypted);
+        sendToServer(secret);
         return getServerResponse();
     }
 
-    private String generateSuperSecret() {
-        return "¡Sup3r_S3cr3d!";
+    private String getSecretFromDb() {
+        return Base64.encodeToString("¡Sup3r_S3cr3d!".getBytes(), Base64.DEFAULT);
     }
 
-    private String encryptSecret(String secret) {
-        return Base64.encodeToString(secret.getBytes(), 0);
+    private String decryptSecret(String secret) {
+        byte[] bytes = Base64.decode(secret.getBytes(), Base64.DEFAULT);
+        return new String(bytes);
     }
 
     private void sendToServer(String secret) {
@@ -71,6 +72,6 @@ public class HookActivity extends Activity {
     }
 
     private boolean getServerResponse() {
-        return mockServer.length() > 14;
+        return mockServer.length() == 14;
     }
 }
