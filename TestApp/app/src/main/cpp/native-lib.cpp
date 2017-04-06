@@ -5,16 +5,17 @@
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_srflipflop_fridasandbox_ImplementActivity_implementJNI(JNIEnv *env, jobject instance) {
-    int n;
-    jstring result = (jstring) "";
-    char values[5] = {'a', 'b', 'c', 'd', 'e'};
+    int random;
+    char result[5] = "";
+    char values[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
-    for (int i = 0; i < 4; ++i) {
-        n = rand() % 5;
-        result = result + values[n];
+    srand(time(NULL));
+    for (int i = 0; i < 4; i++) {
+        random = rand() % 10;
+        result[i] = values[random];
     }
 
-    return result;
+    return env->NewStringUTF(result);
 }
 
 extern "C"
