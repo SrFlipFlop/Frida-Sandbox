@@ -5,7 +5,11 @@ I tried to implement different situations that can be interesting to use Frida h
 
 ### Sections
 #### Hook
-TODO: write section
+Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called.
+
+´´´
+
+´´´
 
 #### Implement
 TODO: write section
