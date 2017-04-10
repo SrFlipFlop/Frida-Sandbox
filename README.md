@@ -3,13 +3,18 @@
 
 I tried to implement different situations that can be interesting to use Frida hooks (if you have more ideas please feel free to contribute). Each section is implemented in three diferent ways: in the FridaSandbox app, in the FridaLib (a Java library) and in native code using the JNI (*I know that is redundant since a lot of Frida hooks will have the same code, but Frida is an awesome tool and it's funny to use :D*).
 
+### Basics
+
 ### Sections
 #### Hook
 Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called.
 
-´´´
-
-´´´
+```javascript
+if (Java.available) {
+    Java.perform(function () {
+    });
+}
+```
 
 #### Implement
 TODO: write section
