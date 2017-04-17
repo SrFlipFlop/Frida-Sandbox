@@ -26,6 +26,9 @@ if (Java.available) { //1
 2. Java.perform [*"ensure that the current thread is attached to the VM "*](https://www.frida.re/docs/javascript-api/#java) and call the function that will interact with tha application. It's important that all hook code to be inside the callback function.
 3. Java.use generate a JavaScript wrapper to the specified class. This method is really important to select the Java objects that will be instrumented.
 4. In this line is used the wrapper generated (*app.package.name*) to select an existing function (*appMethod*) and modify the implementation when the function is called. The new implementation is defined in the JavaScript function, in this case it's only returned the result of the original function.
+5. The return statement is used to return the result of the new implementation, in this case is used the result of the original function called using *this.appMethod*.
+6. Another interesting Frida feature is to generate new instances of a wrapped class. This can be accomplished by using *$new* with the class wrapped variable.
+7. It is possible to use the generated instance like a Java object, for example to call a public function.
 
 ### Sections
 #### Hook
