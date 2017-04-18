@@ -32,8 +32,9 @@ if (Java.available) { //1
 
 ### Sections
 #### Hook
-Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called.
-
+Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called. For this task it is only needed to use the JavaScript API function **Java.use** (*third comment in the previous example*). Once the function is wrapped it's time to send the feedback to the user, this can be done in a different ways:
+* Using the JavaScript print function **console.log**.
+* Using the **send** function, that sends information to a binded Python method (*in my case I use Python to launch de scripts, but it can be done with other languages or the Frida interface*).
 ```javascript
 if (Java.available) {
     Java.perform(function () {
