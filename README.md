@@ -30,6 +30,16 @@ if (Java.available) { //1
 6. Another interesting Frida feature is to generate new instances of a wrapped class. This can be accomplished by using *$new* with the class wrapped variable.
 7. It is possible to use the generated instance like a Java object, for example to call a public function.
 
+To attach the Frida with an Android application it is possible to use the Frida command line (*frida -U -l script.js com.app.name*) or using the bindings supported by other programming languages. In my case I have a small Python script to launch multiple JavaScript hooks, but the following code shows the basics to launch a script.
+
+```python
+import frida
+js = "do something"
+p = frida.get_usb_device().attach('com.app.name')
+s = p.create_script(js)
+s.load()
+```
+
 ### Sections
 #### Hook
 Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called. For this task it is only needed to use the JavaScript API function **Java.use** (*third comment in the previous example*). Once the function is wrapped it's time to send the feedback to the user, this can be done in a different ways:
