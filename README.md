@@ -42,9 +42,9 @@ s.load()
 
 ### Sections
 #### Hook
-Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called. For this task it is only needed to use the JavaScript API function **Java.use** (*third comment in the previous example*). Once the function is wrapped it's time to send the feedback to the user, this can be done in a different ways:
+Firda can be used for a most basic functions, for example to trace the application functions to know how the program is working and when the functions are been called. For this task it is only needed to use the JavaScript API function **Java.use** (*third comment in the previous example*). Once the function is wrapped it's time to reimplement to send the feedback to the user, this can be done in a different ways:
 * Using the JavaScript print function **console.log**.
-* Using the **send** function, that sends information to a binded Python method (*in my case I use Python to launch de scripts, but it can be done with other languages or the Frida interface*).
+* Using the **send** function, that sends information to a binded programing language. With Python, the content of the **send** function is handled by the method specified using *script.on('message', on_message)*.
 ```javascript
 if (Java.available) {
     Java.perform(function () {
@@ -53,7 +53,7 @@ if (Java.available) {
 ```
 
 #### Implement
-TODO: write section
+During a pentest or a CTF, is very common to find dynamic protections that make more difficult the reverser work. With Frida it's possible to bypass the protections by changing the methods implementations. To do this is the same code as the hook example, the difference is that in this example we will return the result that bypass the protection (*as I mentioned before, many examples of Frida will use a similar code*).
 
 #### Brute force
 TODO: write section
