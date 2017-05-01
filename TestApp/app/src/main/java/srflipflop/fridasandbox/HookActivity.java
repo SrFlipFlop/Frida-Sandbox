@@ -14,6 +14,10 @@ public class HookActivity extends Activity {
     private Spinner spinner;
     private String mockServer;
 
+    static {
+        System.loadLibrary("native-lib");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,4 +78,6 @@ public class HookActivity extends Activity {
     private boolean getServerResponse() {
         return mockServer.length() == 14;
     }
+
+    public native boolean sendInfoJNI();
 }
