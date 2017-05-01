@@ -2,6 +2,47 @@
 #include <string>
 #include <stdlib.h>
 
+char * get_secret_db() {
+    char *secret;
+    strcpy(secret, "h4x0r_s3kr3t");
+    return secret;
+}
+
+bool is_correct(char *secret) {
+    return (sizeof(secret) == 12);
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_srflipflop_fridasandbox_ChecksActivity_vmCheckJNI(JNIEnv *env, jobject instance) {
+    return true
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_srflipflop_fridasandbox_ChecksActivity_rootCheckJNI(JNIEnv *env, jobject instance) {
+    return true;
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_srflipflop_fridasandbox_ChecksActivity_tamperCheckJNI(JNIEnv *env, jobject instance) {
+    return true;
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_srflipflop_fridasandbox_ChecksActivity_pinningCheckJNI(JNIEnv *env, jobject instance) {
+    return true;
+}
+
+extern "C"
+JNIEXPORT jboolean JNICALL
+Java_srflipflop_fridasandbox_HookActivity_sendInfoJNI(JNIEnv *env, jobject instance) {
+    char *secret = get_secret_db();
+    return is_correct(secret);
+}
+
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_srflipflop_fridasandbox_ImplementActivity_implementJNI(JNIEnv *env, jobject instance) {

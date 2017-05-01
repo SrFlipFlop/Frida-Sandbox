@@ -14,6 +14,10 @@ import srflipflop.fridasandbox.utils.VirtualMachineManager;
 public class ChecksActivity extends AppCompatActivity {
     private Spinner spinner;
 
+    static {
+        System.loadLibrary("native-lib");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,5 +110,13 @@ public class ChecksActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    public native boolean rootCheckJNI();
+
+    public native boolean vmCheckJNI();
+
+    public native boolean tamperCheckJNI();
+
+    public native boolean pinningCheckJNI();
 
 }
