@@ -46,7 +46,7 @@ Firda can be used for a most basic functions, for example to trace the applicati
 * Using the JavaScript print function **console.log**.
 * Using the **send** function, that sends information to a binded programing language. With Python, the content of the **send** function is handled by the method specified using *script.on('message', on_message)*.
 
-TODO: explain application challange
+In this first case, the application contains functions that send sensitive information to a dummy server. Unable to intercept communications due to the excellent implementation of certificate pinning, you can hook the functions and send the sensitive information to the end user.
 
 #### Implement
 During a pentest or a CTF, is very common to find dynamic protections that make more difficult the reverser work. With Frida it's possible to bypass the protections by changing the methods implementations. To do this is the same code as the hook example, the difference is that in this example we will return the result that bypass the protection (*as I mentioned before, many examples of Frida will use a similar code*).
