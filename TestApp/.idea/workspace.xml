@@ -36,33 +36,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="native-lib.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-                <element signature="e#56#155#0" expanded="false" />
-                <element signature="e#157#225#0" expanded="false" />
-                <element signature="e#247#370#0" expanded="false" />
-                <element signature="e#392#518#0" expanded="false" />
-                <element signature="e#540#668#0" expanded="false" />
-                <element signature="e#690#819#0" expanded="false" />
-                <marker date="1493639911983" expanded="false" signature="944:1014" ph="{...}" />
-                <marker date="1493639911983" expanded="false" signature="1144:1422" ph="{...}" />
-                <marker date="1493639911983" expanded="false" signature="1568:1909" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChecksActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChecksActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/ChecksActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="119" column="41" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="1746">
+              <caret line="106" column="9" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+              <folding>
+                <element signature="method#errorMsg#0;class#ChecksActivity#0" expanded="false" />
+                <element signature="method#successMsg#0;class#ChecksActivity#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2739,8 +2721,8 @@
         <option value="$PROJECT_DIR$/fridalib/src/main/java/srflipflop/fridalib/Hook.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/ImplementActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/HookActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/ChecksActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
+        <option value="$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/ChecksActivity.java" />
       </list>
     </option>
   </component>
@@ -3369,14 +3351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/ChecksActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="119" column="41" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -3392,6 +3366,17 @@
             <marker date="1493639911983" expanded="false" signature="944:1014" ph="{...}" />
             <marker date="1493639911983" expanded="false" signature="1144:1422" ph="{...}" />
             <marker date="1493639911983" expanded="false" signature="1568:1909" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/srflipflop/fridasandbox/ChecksActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="106" column="9" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+          <folding>
+            <element signature="method#errorMsg#0;class#ChecksActivity#0" expanded="false" />
+            <element signature="method#successMsg#0;class#ChecksActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>

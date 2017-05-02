@@ -39,6 +39,7 @@ public class ChecksActivity extends AppCompatActivity {
             case "Library":
                 break;
             case "Native":
+                result = rootCheckJNI();
                 break;
         }
         if (result) {
@@ -58,6 +59,7 @@ public class ChecksActivity extends AppCompatActivity {
             case "Library":
                 break;
             case "Native":
+                result = vmCheckJNI();
                 break;
         }
         if (result) {
@@ -77,6 +79,7 @@ public class ChecksActivity extends AppCompatActivity {
             case "Library":
                 break;
             case "Native":
+                result = tamperCheckJNI();
                 break;
         }
         if (result) {
@@ -87,13 +90,20 @@ public class ChecksActivity extends AppCompatActivity {
     }
 
     public void onClickPinning(View v) {
+        boolean result = false;
         switch (spinner.getSelectedItem().toString()) {
             case "Application":
                 break;
             case "Library":
                 break;
             case "Native":
+                result = pinningCheckJNI();
                 break;
+        }
+        if (result) {
+            errorMsg("APK modified");
+        } else {
+            successMsg("APK not modified");
         }
     }
 
