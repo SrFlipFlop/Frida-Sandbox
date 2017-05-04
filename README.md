@@ -46,12 +46,12 @@ Firda can be used for a most basic functions, for example to trace the applicati
 * Using the JavaScript print function **console.log**.
 * Using the **send** function, that sends information to a binded programing language. With Python, the content of the **send** function is handled by the method specified using *script.on('message', on_message)*.
 
-In this first case, the application contains functions that send sensitive information to a dummy server. Unable to intercept communications due to the excellent implementation of certificate pinning, you can hook the functions and send the sensitive information to the end user.
+In this first case, the application contains functions that send sensitive information to a dummy server. Unable to intercept communications due to the excellent implementation of certificate pinning, it is possible hook the functions and send the sensitive information to the end user.
 
 #### Implement
 During a pentest or a CTF, is very common to find dynamic protections that make more difficult the reverser work. With Frida it's possible to bypass the protections by changing the methods implementations. To do this is the same code as the hook example, the difference is that in this example we will return the result that bypass the protection (*as I mentioned before, many examples of Frida will use a similar code*).
 
-TODO: explain application challange
+The application have a functionality that generates a secret key and sends it to the user email (two factor authentication), then the user needs this key to log in the application. A priori without the email credentials it's impossible to obtain the generated key, but with Frida the impossible becomes possible *:D*. Only by modifying the function that generates the password and return a known key it is possible to bypass the second factor authentication.
 
 #### Brute force
 Sometimes it's useful to use the application actively and not wait until the hooked method get called. For example if we know that a piece of code is vulnerable but the application don't use it (*deprecated developers test code*), using Frida it is possible to call that code and realize the deprecated function. To realize this acction, we have to use the example code in the 6 and 7 comments.
